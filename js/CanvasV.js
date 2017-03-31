@@ -60,4 +60,7 @@ $('document').ready(function() {
         clickY.length = 0;
         dragging.length = 0;
     });
+    $('brush').click(function() {
+
+    });
 });

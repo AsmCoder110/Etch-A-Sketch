@@ -4,4 +4,4 @@ sass-cache/
 npm-debug*
 *.map
 sass/css
-.sass-cache/
+/.sass-cache/
