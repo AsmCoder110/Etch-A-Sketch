@@ -1,0 +1,20 @@
+{
+  "name": "etchasketch",
+  "version": "1.0.0",
+  "description": "Creating a browser version of Etch a Sketch.",
+  "main": "eas.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Odin",
+    "Etch-A-Sketch"
+  ],
+  "author": "AsmCoder110",
+  "license": "MIT",
+  "dependencies": {
+    "graceful-fs": "^4.1.11",
+    "minimatch": "^3.0.3",
+    "sass-lint": "^1.10.2"
+  }
+}
