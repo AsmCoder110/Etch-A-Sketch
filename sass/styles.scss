@@ -2,6 +2,12 @@ $font-stack: sans-serif;
 $font-size: 20px;
 $primary-color: #333;
 $fulls: 100%;
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
 body {
     margin: 0;
     padding: 0;

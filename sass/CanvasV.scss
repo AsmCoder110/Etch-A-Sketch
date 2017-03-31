@@ -1,4 +1,51 @@
-$font-stack: sans-serif;
+$font-stack: sans-serif 20px;
 .etchCanvas {
     background: white;
+}
+
+#ColiDiv {
+    position: absolute;
+    left: 21.8%;
+    padding: 10px;
+    width: 20.1%;
+    background: #444;
+    z-index: 999;
+}
+
+
+/*#ColiDiv div {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font: $font-stack;
+}
+
+#ColiDiv a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+#ColiDiv div:hover {
+    background: #666;
+}*/
+
+.menu-item {
+    display: block-inline;
+    position: relative;
+    left: 0;
+    right: 20px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+}
+
+#ColiDiv a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu-item:hover {
+    background: #666;
 }

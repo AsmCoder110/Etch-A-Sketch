@@ -38,7 +38,7 @@ $('document').ready(function() {
     function redraw() {
         context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 
-        context.strokeStyle = "#b592e5";
+        context.strokeStyle = "#9acd32";
         context.lineJoin = "round";
         context.lineWidth = 5;
 
@@ -60,7 +60,19 @@ $('document').ready(function() {
         clickY.length = 0;
         dragging.length = 0;
     });
-    $('brush').click(function() {
 
+    $('#Colid').click(function() {
+        if (document.getElementById("ColiDiv").style.display == "block") {
+            document.getElementById("ColiDiv").style.display = "none"
+            document.getElementById("Colid").getElementsByTagName('i')[0].style.display = "inline";
+            document.getElementById("Colid").getElementsByTagName('i')[1].style.display = "none";
+            document.getElementById("ColiDiv").style.height = "";
+        } else {
+            document.getElementById("ColiDiv").style.display = "block";
+            document.getElementById("ColiDiv").style.height = "400px";
+            document.getElementById("Colid").getElementsByTagName('i')[0].style.display = "none";
+            document.getElementById("Colid").getElementsByTagName('i')[1].style.display = "inline";
+
+        }
     });
 });

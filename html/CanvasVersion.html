@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="description" content="Web version of Etch a Sketch">
-        <meta name="keywords" content="HTML CSS JAVASCRIPT JQUERY HTML5 CANVAS">
-        <meta name="author" content="AsmCoder110">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EAS(Canvas)</title>
-        <link type="text/css" rel="stylesheet" href="../css/styles.css">
-        <link type="text/css" rel="stylesheet" href="../css/CanvasV.css">
-        <script src="../js/jquery/jquery-3.1.1.min.js"></script>
-        <script src="../js/CanvasV.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Web version of Etch a Sketch">
+    <meta name="keywords" content="HTML CSS JAVASCRIPT JQUERY HTML5 CANVAS">
+    <meta name="author" content="AsmCoder110">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAS(Canvas)</title>
+    <link type="text/css" rel="stylesheet" href="../css/styles.css">
+    <link type="text/css" rel="stylesheet" href="../css/CanvasV.css">
+    <link type="text/css" rel="stylesheet" href="../css/font-awesome.min.css">
+    <script src="../js/jquery/jquery-3.1.1.min.js">
+    </script>
+    <script src="../js/CanvasV.js"></script>
 
-        <body>
-            <ul class="nav">
-                <a id="clear">
-                    <li style="width: 50%;"> Erase </li>
+    <body>
+        <ul class="nav">
+            <a id="clear" href="javascript:void(0);">
+                <li style="width: 20%;"> Erase </li>
+            </a>
+            <a href="javascript:void(0);">
+                <li id="Colid" style=" width:20%; ">COLORS
+                    <i class="fa fa-caret-down" style="display: inline;"></i>
+                    <i class="fa fa-caret-up" style="display: none;"></i>
+                </li>
+            </a>
+
+        </ul>
+        <div id="ColiDiv" style="display: none;">
+            <ul style="display: block-inline;">
+
+                <a href="javascript:void(0);">
+                    <li class="menu-item"> RED</li>
                 </a>
-                <a href="#brush">
-                    <li style=" width:46.6%;"> Todo </li>
+                <a href="javascript:void(0);">
+                    <li class="menu-item"> BLUE </li>
                 </a>
             </ul>
-            <canvas class="midEtch etchCanvas" id="myc" height="600" width="800">
+        </div>
+        <canvas class="midEtch etchCanvas" id="myc" height="600" width="800">
         </canvas>
-        </body>
+    </body>
 
 </html>
