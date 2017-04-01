@@ -114,6 +114,7 @@ function reset() {
     clickY.length = 0;
     clickDrag.length = 0;
     clickColor.length = 0;
+    currColor = "#9acd32";
 }
 
 function setColor(x) {
@@ -121,23 +122,23 @@ function setColor(x) {
     switch (x) {
         case 'red':
             currColor = "#FF0000";
-            reset();
+
             break;
         case 'green':
             currColor = "#00FF00";
-            reset();
+
             break;
         case 'blue':
             currColor = "#0000FF";
-            reset();
+
             break;
         case 'yellow':
             currColor = "#ff0";
-            reset();
+
             break;
         case 'black':
             currColor = "#000000";
-            reset();
+
             break;
 
     }
