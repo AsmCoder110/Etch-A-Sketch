@@ -28,16 +28,15 @@
             </a>
 
         </ul>
-        <div id="ColiDiv" style="display: none;">
-            <ul style="display: block-inline;">
+        <input type="color" id="colorPicker" class="hidden">
+        <div id="ColiDiv" style=" position:absolute;display: none;">
+            <a href="javascript:void(0);" onclick="setColor('red')">RED</a>
+            <a href="javascript:void(0);" onclick="setColor('green')">GREEN</a>
+            <a href="javascript:void(0);" onclick="setColor('blue')">BLUE</a>
+            <a href="javascript:void(0);" onclick="setColor('yellow')">YELLOW</a>
+            <a href="javascript:void(0);" onclick="setColor('black')">BLACK</a>
+            <a href="javascript:void(0);" id="callPicker">PICK</a>
 
-                <a href="javascript:void(0);">
-                    <li class="menu-item"> RED</li>
-                </a>
-                <a href="javascript:void(0);">
-                    <li class="menu-item"> BLUE </li>
-                </a>
-            </ul>
         </div>
         <canvas class="midEtch etchCanvas" id="myc" height="600" width="800">
         </canvas>

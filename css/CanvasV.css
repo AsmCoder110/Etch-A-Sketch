@@ -9,37 +9,22 @@
   background: #444;
   z-index: 999; }
 
-/*#ColiDiv div {
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    font: $font-stack;
-}
-
 #ColiDiv a {
-    text-align: center;
-    color: white;
-    text-decoration: none;
-}
-
-#ColiDiv div:hover {
-    background: #666;
-}*/
-.menu-item {
-  display: block-inline;
-  position: relative;
-  left: 0;
-  right: 20px;
-  padding: 10px 0 10px 0;
-  width: 100%;
+  padding: 10px;
   text-align: center;
-  list-style: none; }
-
-#ColiDiv a {
+  display: block;
   text-decoration: none;
   color: white; }
 
-.menu-item:hover {
+.hidden {
+  position: absolute;
+  left: -134234;
+  top: auto;
+  width: 0;
+  height: 0;
+  overflow: hidden; }
+
+#ColiDiv a:hover {
   background: #666; }
 
 /*# sourceMappingURL=CanvasV.css.map */
