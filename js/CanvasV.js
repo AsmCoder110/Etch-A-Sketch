@@ -7,6 +7,9 @@ var clickColor = new Array();
 var setcolor = true;
 var divVisible = false;
 var hdd = null;
+var dropList = {
+    id:
+}
 $('document').ready(function() {
     var context = document.getElementById("myc").getContext('2d');
     var paint = false;
@@ -108,7 +111,14 @@ $('document').ready(function() {
         setcolor = false;
         hdd();
     });
+    $("#dwnldButton").click(function() {
 
+        var canvas = document.getElementById("myc");
+        var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        window.location.href = img;
+
+
+    });
 
 
 });
