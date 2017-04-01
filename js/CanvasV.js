@@ -153,7 +153,7 @@ function reset() {
     clickY.length = 0;
     clickDrag.length = 0;
     clickColor.length = 0;
-
+    clickLineH.length = 0;
 }
 
 function setColor(x) {
