@@ -1,19 +1,29 @@
 var currColor = "#9acd32";
+
 var clickX = new Array();
 var clickY = new Array();
 var clickDrag = new Array();
 var clickColor = new Array();
 var setcolor = true;
 var divVisible = false;
+var hdd = null;
 $('document').ready(function() {
     var context = document.getElementById("myc").getContext('2d');
     var paint = false;
 
+    hdd = function hideDiv() {
+        divVisible = false;
+        $("#ColiDiv").slideUp("slow");
+        document.getElementById("ColiDiv").style.height = "";
+        document.getElementById("ColiDiv").style.display = "none";
+        document.getElementById("Colid").getElementsByTagName('i')[0].style.display = "inline";
+        document.getElementById("Colid").getElementsByTagName('i')[1].style.display = "none";
 
+    }
 
     $('#myc').mousedown(function(e) {
         if (divVisible) {
-            hideDiv();
+            hdd();
         }
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
@@ -29,6 +39,7 @@ $('document').ready(function() {
             redraw();
         }
     });
+    currColor = "#9acd32";
     $('.etchCanvas').mouseup(function(e) {
         paint = false;
     });
@@ -78,7 +89,7 @@ $('document').ready(function() {
 
     $('#Colid').click(function() {
         if (document.getElementById("ColiDiv").style.display == "block") {
-            hideDiv();
+            hdd();
 
         } else {
             divVisible = true;
@@ -95,17 +106,10 @@ $('document').ready(function() {
         document.getElementById("colorPicker").value = currColor;
         document.getElementById("colorPicker").click();
         setcolor = false;
+        hdd();
     });
 
-    function hideDiv() {
-        divVisible = false;
-        $("#ColiDiv").slideUp("slow");
-        document.getElementById("ColiDiv").style.height = "";
-        document.getElementById("ColiDiv").style.display = "none";
-        document.getElementById("Colid").getElementsByTagName('i')[0].style.display = "inline";
-        document.getElementById("Colid").getElementsByTagName('i')[1].style.display = "none";
 
-    }
 
 });
 
@@ -114,10 +118,12 @@ function reset() {
     clickY.length = 0;
     clickDrag.length = 0;
     clickColor.length = 0;
-    currColor = "#9acd32";
+
 }
 
 function setColor(x) {
+    if (hdd)
+        hdd();
     setcolor = true;
     switch (x) {
         case 'red':
