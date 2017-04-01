@@ -18,10 +18,11 @@
 
 .hidden {
   position: absolute;
-  left: -134234;
-  top: auto;
+  left: -99999;
+  top: 0;
   width: 0;
   height: 0;
+  z-index: -1234123;
   overflow: hidden; }
 
 #ColiDiv a:hover {
