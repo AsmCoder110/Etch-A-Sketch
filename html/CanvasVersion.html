@@ -18,23 +18,37 @@
     <body>
         <ul class="nav">
             <a id="clear" href="javascript:void(0);">
-                <li style="width: 25%;"> Erase </li>
+                <li style="width: 23%;"> Erase </li>
             </a>
             <a href="javascript:void(0);">
-                <li id="Colid" style=" width:25%; ">COLORS
+                <li id="top_Cols" style=" width:23%; " onclick="showDL('Cols');">COLORS
                     <i class="fa fa-caret-down" style="display: inline;"></i>
                     <i class="fa fa-caret-up" style="display: none;"></i>
                 </li>
             </a>
             <a href="javascript:void(0);">
-                <li id="dwnldButton" style="width: 25%;">DOWNLOAD</li>
+                <li id="dwnldButton" style="width: 23%;">DOWNLOAD</li>
             </a>
             <a href="javascript:void(0);">
-                <li id="sizeButton" style="width: 24%;">BRUSH SIZE</li>
+                <li id="top_Size" style="width: 23.8%;" onclick="showDL('Size');">BRUSH SIZE
+                    <i class="fa fa-caret-down" style="display: inline;"></i>
+                    <i class="fa fa-caret-up" style="display: none;"></i>
+                </li>
             </a>
         </ul>
+
+        <div id="Size" class="dropList" style="position:absolute;display:none;">
+            <a href="javascript:void(0);" onclick="setLineH(10);">10</a>
+            <a href="javascript:void(0);" onclick="setLineH(11);">11</a>
+            <a href="javascript:void(0);" onclick="setLineH(12);">12</a>
+            <a href="javascript:void(0);" onclick="setLineH(13);">13</a>
+            <a href="javascript:void(0);" onclick="setLineH(14);">14</a>
+            <a href="javascript:void(0);" onclick="setLineH(15);">15</a>
+
+        </div>
+
         <input type="color" id="colorPicker" class="hidden">
-        <div id="ColiDiv" style=" position:absolute;display: none;">
+        <div id="Cols" class="dropList" style=" position:absolute;display: none;">
             <a href="javascript:void(0);" onclick="setColor('red')">RED</a>
             <a href="javascript:void(0);" onclick="setColor('green')">GREEN</a>
             <a href="javascript:void(0);" onclick="setColor('blue')">BLUE</a>
@@ -43,6 +57,7 @@
             <a href="javascript:void(0);" id="callPicker">PICK</a>
 
         </div>
+
         <canvas class="midEtch etchCanvas" id="myc" height="600" width="800">
         </canvas>
     </body>

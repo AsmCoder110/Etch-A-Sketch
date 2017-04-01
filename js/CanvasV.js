@@ -4,29 +4,21 @@ var clickX = new Array();
 var clickY = new Array();
 var clickDrag = new Array();
 var clickColor = new Array();
+var clickLineH = new Array();
 var setcolor = true;
 var divVisible = false;
 var hdd = null;
-var dropList = {
-    id:
-}
+var currX = undefined;
+var currLineH = undefined;
 $('document').ready(function() {
     var context = document.getElementById("myc").getContext('2d');
     var paint = false;
 
-    hdd = function hideDiv() {
-        divVisible = false;
-        $("#ColiDiv").slideUp("slow");
-        document.getElementById("ColiDiv").style.height = "";
-        document.getElementById("ColiDiv").style.display = "none";
-        document.getElementById("Colid").getElementsByTagName('i')[0].style.display = "inline";
-        document.getElementById("Colid").getElementsByTagName('i')[1].style.display = "none";
 
-    }
 
     $('#myc').mousedown(function(e) {
         if (divVisible) {
-            hdd();
+            closeDL(currX);
         }
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
@@ -63,6 +55,7 @@ $('document').ready(function() {
             clickColor.push(currColor);
 
         }
+        clickLineH.push(currLineH);
     }
 
     function redraw() {
@@ -70,7 +63,6 @@ $('document').ready(function() {
 
 
         context.lineJoin = "round";
-        context.lineWidth = 10;
 
         for (var i = 0; i < clickX.length; i++) {
             context.beginPath();
@@ -82,6 +74,8 @@ $('document').ready(function() {
             context.lineTo(clickX[i], clickY[i]);
             context.closePath();
             context.strokeStyle = clickColor[i];
+            context.lineWidth = clickLineH[i];
+
             context.stroke();
         }
     }
@@ -90,26 +84,13 @@ $('document').ready(function() {
         reset();
     });
 
-    $('#Colid').click(function() {
-        if (document.getElementById("ColiDiv").style.display == "block") {
-            hdd();
-
-        } else {
-            divVisible = true;
-            $("#ColiDiv").slideDown("slow");
-            document.getElementById("ColiDiv").style.display = "block";
-            document.getElementById("ColiDiv").style.height = "400px";
-            document.getElementById("Colid").getElementsByTagName('i')[0].style.display = "none";
-            document.getElementById("Colid").getElementsByTagName('i')[1].style.display = "inline";
-
-        }
-    });
+    $
     $("#callPicker").click(function() {
         document.getElementById("colorPicker").focus();
         document.getElementById("colorPicker").value = currColor;
         document.getElementById("colorPicker").click();
         setcolor = false;
-        hdd();
+        closeDL(currX);
     });
     $("#dwnldButton").click(function() {
 
@@ -123,6 +104,50 @@ $('document').ready(function() {
 
 });
 
+function showDL(x) {
+    /* 
+        If Another Drop List is visible and it's not the currently visible one
+        (the user has clicked on another list while this one was active)
+        In that case, Close the previous one and set divVisible = false and continue.
+    */
+    if (x !== currX && divVisible) {
+        closeDL(currX);
+        divVisible = false;
+
+    }
+    var m1 = "#top_" + x;
+    var n1 = "top_" + x;
+    var m2 = "#" + x;
+
+    if (document.getElementById(x).style.display == "block") {
+        divVisible = false;
+        closeDL(x);
+
+    } else {
+        divVisible = true;
+        currX = x;
+        $(m2).slideDown("slow");
+        document.getElementById(x).style.display = "block";
+        document.getElementById(x).style.height = "400px";
+        document.getElementById(n1).getElementsByTagName('i')[0].style.display = "none";
+        document.getElementById(n1).getElementsByTagName('i')[1].style.display = "inline";
+
+    }
+}
+
+function closeDL(x) {
+
+    var n1 = "top_" + x;
+    var m2 = "#" + x;
+
+    $(m2).slideUp("slow");
+    document.getElementById(x).style.height = "";
+    document.getElementById(x).style.display = "none";
+    document.getElementById(n1).getElementsByTagName('i')[0].style.display = "inline";
+    document.getElementById(n1).getElementsByTagName('i')[1].style.display = "none";
+
+}
+
 function reset() {
     clickX.length = 0;
     clickY.length = 0;
@@ -132,8 +157,8 @@ function reset() {
 }
 
 function setColor(x) {
-    if (hdd)
-        hdd();
+
+    closeDL(currX);
     setcolor = true;
     switch (x) {
         case 'red':
@@ -159,4 +184,9 @@ function setColor(x) {
 
     }
 
+}
+
+function setLineH(x) {
+    closeDL(currX);
+    currLineH = x;
 }

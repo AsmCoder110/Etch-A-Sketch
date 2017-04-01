@@ -1,15 +1,22 @@
 .etchCanvas {
   background: white; }
 
-#ColiDiv {
+#Cols {
   position: absolute;
-  left: 21.8%;
+  left: 24.8%;
+  width: 23.1%; }
+
+#Size {
+  position: absolute;
+  left: 74.4%;
+  width: 23.9%; }
+
+.dropList {
   padding: 10px;
-  width: 20.1%;
   background: #444;
   z-index: 999; }
 
-#ColiDiv a {
+.dropList a {
   padding: 10px;
   text-align: center;
   display: block;
@@ -25,7 +32,7 @@
   z-index: -1234123;
   overflow: hidden; }
 
-#ColiDiv a:hover {
+.dropList a:hover {
   background: #666; }
 
 /*# sourceMappingURL=CanvasV.css.map */
