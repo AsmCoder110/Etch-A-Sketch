@@ -9,7 +9,7 @@ var setcolor = true;
 var divVisible = false;
 var hdd = null;
 var currX = undefined;
-var currLineH = undefined;
+var currLineH = 10;
 $('document').ready(function() {
     var context = document.getElementById("myc").getContext('2d');
     var paint = false;
@@ -154,6 +154,7 @@ function reset() {
     clickDrag.length = 0;
     clickColor.length = 0;
     clickLineH.length = 0;
+    currLineH = 10;
 }
 
 function setColor(x) {
