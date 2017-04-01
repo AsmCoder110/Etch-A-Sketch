@@ -95,8 +95,9 @@ $('document').ready(function() {
     $("#dwnldButton").click(function() {
 
         var canvas = document.getElementById("myc");
-        var img = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-        window.location.href = img;
+        canvas.toBlob(function(blob) {
+            saveAs(blob, "Image.png");
+        });
 
 
     });
