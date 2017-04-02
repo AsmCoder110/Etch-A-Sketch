@@ -116,6 +116,7 @@ function showDL(x) {
         divVisible = false;
 
     }
+
     var m1 = "#top_" + x;
     var n1 = "top_" + x;
     var m2 = "#" + x;

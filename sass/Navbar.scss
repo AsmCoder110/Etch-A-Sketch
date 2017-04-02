@@ -1,0 +1,40 @@
+$font-stack: sans-serif 20px;
+.dropList {
+    padding: 10px;
+    background: #444;
+    z-index: 999;
+}
+
+#Cols {
+    position: absolute;
+    left: 24.8%;
+    width: 23.1%;
+}
+
+#Size {
+    position: absolute;
+    left: 74.4%;
+    width: 23.9%;
+}
+
+.dropList a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.hidden {
+    position: absolute;
+    left: -99999;
+    top: 0;
+    width: 0;
+    height: 0;
+    z-index: -1234123;
+    overflow: hidden;
+}
+
+.dropList a:hover {
+    background: #666;
+}

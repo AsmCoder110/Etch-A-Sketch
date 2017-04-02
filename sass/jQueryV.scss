@@ -1,0 +1,10 @@
+.blocks {
+    font-size: 0;
+    /* IMPORTANT AS HELL see: https://davidwalsh.name/remove-whitespace-inline-block */
+}
+
+.block {
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid black;
+}

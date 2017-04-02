@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Web version of Etch a Sketch">
+    <meta name="keywords" content="HTML CSS JAVASCRIPT JQUERY HTML5 CANVAS">
+    <meta name="author" content="AsmCoder110">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EAS(jQuery)</title>
+    <link type="text/css" rel="stylesheet" href="../css/reset.css">
+    <link type="text/css" rel="stylesheet" href="../css/styles.css">
+    <link type="text/css" rel="stylesheet" href="../css/Navbar.css">
+    <link type="text/css" rel="stylesheet" href="../css/jQueryV.css">
+    <link type="text/css" rel="stylesheet" href="../css/font-awesome.min.css">
+    <script src="../js/jquery/jquery-3.1.1.min.js">
+    </script>
+    <script src="../js/jQueryV.js"></script>
+    <script src="../js/html2canvas/html2canvas.min.js"></script>
+    <script src="../js/filesaver/FileSaver.min.js"></script>
+</head>
+
+<body>
+    <ul class="nav">
+        <a href="javascript:void(0);" onclick="reset();">
+            <li style="width: 23%;"> CLEAR </li>
+        </a>
+        <a href="javascript:void(0);">
+            <li id="top_Cols" style=" width:23%; " onclick="showDL('Cols');">COLORS
+                <i class="fa fa-caret-down" style="display: inline;"></i>
+                <i class="fa fa-caret-up" style="display: none;"></i>
+            </li>
+        </a>
+        <a href="javascript:void(0);">
+            <li id="dwnldButton" style="width: 23%;">DOWNLOAD</li>
+        </a>
+        <a href="javascript:void(0);">
+            <li id="top_Size" style="width: 23.8%;" onclick="showDL('Size');">GRID SIZE
+                <i class="fa fa-caret-down" style="display: inline;"></i>
+                <i class="fa fa-caret-up" style="display: none;"></i>
+            </li>
+        </a>
+    </ul>
+    <div id="Size" class="dropList" style="position:absolute;display:none;">
+        <a href="javascript:void(0);" onclick="setGrid(50);">50x50</a>
+        <a href="javascript:void(0);" onclick="setGrid(60);">60x60</a>
+        <a href="javascript:void(0);" onclick="setGrid(65);">70x70</a>
+        <a href="javascript:void(0);" onclick="setGrid(80);">80x80</a>
+        <a href="javascript:void(0);" onclick="setGrid(90);">90x90</a>
+        <a href="javascript:void(0);" onclick="setGrid(100);">100x100</a>
+
+    </div>
+    <input type="color" id="colorPicker" class="hidden">
+    <div id="Cols" class="dropList" style=" position:absolute;display: none;">
+        <a href="javascript:void(0);" onclick="setColor('#ff0000')">RED</a>
+        <a href="javascript:void(0);" onclick="setColor('#00ff00')">GREEN</a>
+        <a href="javascript:void(0);" onclick="setColor('#0000ff')">BLUE</a>
+        <a href="javascript:void(0);" onclick="setColor('#ff0')">YELLOW</a>
+        <a href="javascript:void(0);" onclick="rdColor();">RANDOM</a>
+        <a href="javascript:void(0);" id="callPicker">PICK</a>
+
+    </div>
+
+
+
+    <div id="grid" class="midEtch">
+        <div class="blocks">
+        </div>
+    </div>
+
+</body>
+
+</html>

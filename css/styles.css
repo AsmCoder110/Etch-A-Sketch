@@ -3,6 +3,7 @@ body {
   padding: 0; }
 
 .nav {
+  white-space: nowrap;
   display: block;
   background: #333;
   margin: 0;

@@ -14,6 +14,7 @@ body {
 }
 
 .nav {
+    white-space: nowrap;
     display: block;
     background: $primary-color;
     margin: 0;
