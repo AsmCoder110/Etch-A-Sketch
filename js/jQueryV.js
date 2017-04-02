@@ -6,6 +6,7 @@ var setcolor = true;
 var randomcolor = false;
 $('document').ready(function() {
     NewGrid(currSize);
+    document.getElementById("colorPicker").value = currColor;
     $('#callPicker').click(function() {
         document.getElementById("colorPicker").focus();
         document.getElementById("colorPicker").value = currColor;
@@ -69,6 +70,7 @@ function RandomColor() {
     var g = Math.floor((Math.random() * 15) + 1);
     var b = Math.floor((Math.random() * 15) + 1);
     var color = '#' + possibleValues[r] + possibleValues[g] + possibleValues[b];
+    currColor = color;
     return color;
 }
 
@@ -140,7 +142,7 @@ function closeDL(x) {
 }
 
 function setColor(x) {
-    RandomColor = false;
+    randomcolor = false;
     setcolor = true;
     currColor = String(x);
     closeDL(currX);
